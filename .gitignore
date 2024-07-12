@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 venv/
-
+faiss_index/
 # Distribution / packaging
 .Python
 build/
