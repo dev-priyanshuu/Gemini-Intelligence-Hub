@@ -1,5 +1,6 @@
 youtube_transcript_api
 streamlit
+streamlit_option_menu
 google-generativeai
 python-dotenv
 pathlib
@@ -8,3 +9,4 @@ PyPDF2
 chromadb
 faiss-cpu
 langchain_google_genai
+langchain-community
