@@ -66,7 +66,7 @@ This Streamlit application allows users to interact with PDF files by asking que
    ├── LICENSE                   # License file
    ├── README.md                 # Project documentation
    ├── requirements.txt          # Required Python packages
-   └── Chat With PDF/       # Directory containing the application
-      ├── chat_with_pdf.py  # Script containing the summarizer functions
+   └── Chat With PDF/            # Directory containing the application
+      ├── chat_with_pdf.py       # Script containing the chat functions
       ├── app.py                 # Main Streamlit application
       └── README.md              # Detailed documentation for the application
