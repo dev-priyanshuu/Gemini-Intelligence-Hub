@@ -1,9 +1,10 @@
 # Google Gemini Projects
 
-This Streamlit application allows users to interact with two projects:
+This Streamlit application allows users to interact with three projects:
 
 1. **Youtube Summarizer**
 2. **Chat with PDF using Google Gemini models**
+3. **Google Vision**
 
 
 ## Features
@@ -16,6 +17,12 @@ This Streamlit application allows users to interact with two projects:
   - Upload PDF files to extract text.
   - Process uploaded PDFs to generate embeddings using Google Generative AI.
   - Ask questions related to the PDF content and receive answers using a conversational AI model.
+
+- **Google Vision**
+  - Enter a text prompt in the input field to guide the model in generating a response.
+  - Upload an image in JPG, JPEG, or PNG format.
+  - The model can generate content based on both text and image inputs, providing comprehensive responses.
+  - Uploaded images are displayed within the application for easy reference.
 
 ## Requirements
 
@@ -52,7 +59,7 @@ This Streamlit application allows users to interact with two projects:
 
 2. Open your browser and go to `http://localhost:8501`.
 
-3. The application will open in your default web browser. Use the sidebar to navigate between "Youtube Summarizer" and "Chat with PDF".
+3. The application will open in your default web browser. Use the sidebar to navigate between "Youtube Summarizer", "Chat with PDF" and Google Vision.
 
 ## Usage
 
@@ -80,6 +87,21 @@ This Streamlit application allows users to interact with two projects:
    - Enter a question related to the content of the uploaded PDF files in the text input field.
    - The application will use a conversational AI model to provide a response based on the question.
 
+### Google Vision
+
+1. **Text Input:**
+   - Enter a text prompt in the input field to guide the model in generating a response.
+
+2. **Image Upload:**
+   - Upload an image in JPG, JPEG, or PNG format.
+   - The application supports various image types and sizes.
+
+3. **Combined Analysis:**
+   - The model can generate content based on both text and image inputs, providing comprehensive responses.
+
+4. **Image Display:**
+   - TUploaded images are displayed within the application for easy reference.
+
 
 
 ## Project Structure
@@ -93,11 +115,15 @@ This Streamlit application allows users to interact with two projects:
    ├── app.py                    # main streamlit application
    ├── README.md                 # Project documentation
    ├── requirements.txt          # Required Python packages
-   └── ChatWithPDF/              # Directory containing the application
+   └── ChatWithPDF/              # Directory containing chat with PDF application
       ├── chat_with_pdf.py       # Script containing the chat functions
       ├── app.py                 # chat Streamlit application
       └── README.md              # Detailed documentation for the application
-   └── YoutubeSummarizer/        # Directory containing the application
+   └── Vision/                   # Directory containing vision application
+      ├── vision.py              # Script containing the generate response functions
+      ├── app.py                 # vision Streamlit application
+      └── README.md              # Detailed documentation for the application
+   └── YoutubeSummarizer/        # Directory containing youtube summarizer application
       ├── youtube_summarizer.py  # Script containing the summarizer functions
       ├── app.py                 # YT summarizer Streamlit application
       └── README.md              # Detailed documentation for the application
