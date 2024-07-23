@@ -56,7 +56,7 @@ A web application that summarizes YouTube videos by extracting their transcripts
    ├── LICENSE                   # License file
    ├── README.md                 # Project documentation
    ├── requirements.txt          # Required Python packages
-   └── Youtube Summarizer/       # Directory containing the application
+   └── YoutubeSummarizer/        # Directory containing the application
       ├── youtube_summarizer.py  # Script containing the summarizer functions
       ├── app.py                 # Main Streamlit application
       └── README.md              # Detailed documentation for the application
