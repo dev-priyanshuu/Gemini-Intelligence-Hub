@@ -100,7 +100,7 @@ This Streamlit application allows users to interact with three projects:
    - The model can generate content based on both text and image inputs, providing comprehensive responses.
 
 4. **Image Display:**
-   - TUploaded images are displayed within the application for easy reference.
+   - Uploaded images are displayed within the application for easy reference.
 
 
 
