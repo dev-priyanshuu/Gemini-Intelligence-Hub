@@ -2,6 +2,8 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from YoutubeSummarizer.youtube_summarizer import get_transcript_text, generate_gemini_content
 from ChatWithPDF.chat_with_pdf import user_input, get_pdf_text, get_text_chunks, get_vector_store
+from Vision.vision import get_gemini_response
+from PIL import Image
 
 # Set page title and configuration
 st.set_page_config(page_title="Google Gemini Projects", layout="wide")
@@ -11,8 +13,9 @@ with st.sidebar:
     # Use option_menu from streamlit_option_menu for selection
     project_selection = option_menu('Google Gemini Projects',
                           ['Youtube Summarizer',
-                           'Chat with PDF'],
-                          icons=['youtube','book'],
+                           'Chat with PDF',
+                           'Google Vision'],
+                          icons=['youtube','book','eye'],
                           default_index=0)
 
 # Main content area
@@ -57,3 +60,23 @@ elif project_selection == 'Chat with PDF':
     if user_question:
         response = user_input(user_question)
         st.write("Reply: ", response["output_text"])
+        
+elif project_selection == 'Google Vision':
+    st.header("Gemini vision")
+    input=st.text_input("Input Prompt: ",key="input")
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    image=""   
+
+    if uploaded_file is not None:
+        image = Image.open(uploaded_file)
+        st.image(image,caption = "Uploaded Image", use_column_width=True)
+        
+        submit=st.button("Tell me about the image")
+        
+        ## If ask button is clicked
+        if submit:  
+            response=get_gemini_response(input,image)
+            st.subheader("The Response is")
+            st.write(response)
+
+
