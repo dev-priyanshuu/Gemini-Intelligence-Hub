@@ -1,4 +1,4 @@
-# Google Gemini Projects
+# Gemini Intelligence Hub
 
 This Streamlit application allows users to interact with three projects:
 
