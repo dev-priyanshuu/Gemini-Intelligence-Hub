@@ -24,7 +24,7 @@ This Streamlit application allows users to interact with PDF files by asking que
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/priyxnshuuu/Google-Gemini.git
+   git clone https://github.com/priyxnshuuu/Gemini-Intelligence-Hub.git
    cd Google-Gemini
 
 2. Create and activate a virtual environment:

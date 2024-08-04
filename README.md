@@ -1,4 +1,4 @@
-# Google Gemini Projects
+# Gemini Intelligence Hub
 
 This Streamlit application allows users to interact with three projects:
 
@@ -35,7 +35,7 @@ This Streamlit application allows users to interact with three projects:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/priyxnshuuu/Google-Gemini.git
+   git clone https://github.com/priyxnshuuu/Gemini-Intelligence-Hub.git
    cd Google-Gemini
 
 2. Create and activate a virtual environment:

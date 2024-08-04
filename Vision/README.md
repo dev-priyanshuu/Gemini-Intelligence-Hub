@@ -28,7 +28,7 @@ A web application that use Gemini model to generate responses based on text inpu
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/priyxnshuuu/Google-Gemini.git
+   git clone https://github.com/priyxnshuuu/Gemini-Intelligence-Hub.git
    cd Google-Gemini
 
    ```
