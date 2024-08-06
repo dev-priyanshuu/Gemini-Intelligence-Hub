@@ -13,7 +13,7 @@ st.set_page_config(page_title="Google Gemini App", layout="wide")
 # Sidebar navigation
 with st.sidebar:
     # Use option_menu from streamlit_option_menu for selection
-    project_selection = option_menu('Google Gemini App',
+    project_selection = option_menu("Google Gemini Apps",
                           ['Youtube Summarizer',
                            'Chat with PDF',
                            'Google Vision',

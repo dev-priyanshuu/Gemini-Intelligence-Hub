@@ -1,11 +1,12 @@
 # Gemini Intelligence Hub
+🔗 https://gemini-intelligence-app.streamlit.app/
 
 This Streamlit application allows users to interact with three projects:
 
 1. **Youtube Summarizer**
 2. **Chat with PDF using Google Gemini models**
 3. **Google Vision**
-
+4. **Mental Health Chatbot**
 
 ## Features
 
@@ -23,6 +24,13 @@ This Streamlit application allows users to interact with three projects:
   - Upload an image in JPG, JPEG, or PNG format.
   - The model can generate content based on both text and image inputs, providing comprehensive responses.
   - Uploaded images are displayed within the application for easy reference.
+
+- **Mental Health Chatbot**
+  - Engage in conversations with the chatbot in a user-friendly interface
+  - Each new message includes the previous messages to maintain context.
+  - Each question in the conversation history is highlighted for easy reference.
+  - The app maintains past messages without refreshing the entire screen.
+
 
 ## Requirements
 
@@ -59,7 +67,7 @@ This Streamlit application allows users to interact with three projects:
 
 2. Open your browser and go to `http://localhost:8501`.
 
-3. The application will open in your default web browser. Use the sidebar to navigate between "Youtube Summarizer", "Chat with PDF" and Google Vision.
+3. The application will open in your default web browser. Use the sidebar to navigate between "Youtube Summarizer", "Chat with PDF", Google Vision and Mental Health Chatbot.
 
 ## Usage
 
@@ -90,6 +98,7 @@ This Streamlit application allows users to interact with three projects:
 ### Google Vision
 
 1. **Text Input:**
+   - Navigate to the "Google Vision" section.
    - Enter a text prompt in the input field to guide the model in generating a response.
 
 2. **Image Upload:**
@@ -102,6 +111,11 @@ This Streamlit application allows users to interact with three projects:
 4. **Image Display:**
    - Uploaded images are displayed within the application for easy reference.
 
+###  Mental Health Chatbot
+
+1. **Text Input:**
+   - Navigate to the "Mental Health Chatbot" section.
+   - Enter your query.
 
 
 ## Project Structure
@@ -118,6 +132,10 @@ This Streamlit application allows users to interact with three projects:
    └── ChatWithPDF/              # Directory containing chat with PDF application
       ├── chat_with_pdf.py       # Script containing the chat functions
       ├── app.py                 # chat Streamlit application
+      └── README.md              # Detailed documentation for the application
+   └── MentalTherapist/          # Directory containing the application
+      ├── mental_therapist.py    # Script containing the chat functions
+      ├── app.py                 # Main Streamlit application
       └── README.md              # Detailed documentation for the application
    └── Vision/                   # Directory containing vision application
       ├── vision.py              # Script containing the generate response functions
