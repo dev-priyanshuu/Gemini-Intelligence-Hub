@@ -8,7 +8,7 @@ from MentalTherapist.mental_therapist import start_chat, get_bot_response
 from PIL import Image
 
 # Set page title and configuration
-st.set_page_config(page_title="Google Gemini Projects", layout="wide")
+st.set_page_config(page_title="Google Gemini App", layout="wide")
 
 # Sidebar navigation
 with st.sidebar:
