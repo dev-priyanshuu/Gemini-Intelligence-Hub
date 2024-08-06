@@ -44,7 +44,7 @@ This Streamlit application allows users to interact with PDF files by asking que
 
 1. Run the Streamlit application::
    ```bash
-   streamlit run '.\Chat With PDF\app.py'
+   streamlit run '.\ChatWithPDF\app.py'
 
 2. Open your browser and go to `http://localhost:8501`.
 
@@ -66,7 +66,7 @@ This Streamlit application allows users to interact with PDF files by asking que
    ├── LICENSE                   # License file
    ├── README.md                 # Project documentation
    ├── requirements.txt          # Required Python packages
-   └── Chat With PDF/            # Directory containing the application
+   └── ChatWithPDF/              # Directory containing the application
       ├── chat_with_pdf.py       # Script containing the chat functions
       ├── app.py                 # Main Streamlit application
       └── README.md              # Detailed documentation for the application

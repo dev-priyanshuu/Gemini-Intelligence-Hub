@@ -40,7 +40,7 @@ A web application that summarizes YouTube videos by extracting their transcripts
 
 1. Run the Streamlit application::
    ```bash
-   streamlit run '.\Youtube Summarizer\app.py'
+   streamlit run '.\YoutubeSummarizer\app.py'
 
 2. Open your browser and go to `http://localhost:8501`.
 
