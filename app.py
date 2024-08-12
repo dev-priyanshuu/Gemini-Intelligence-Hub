@@ -4,7 +4,7 @@ from YoutubeSummarizer.youtube_summarizer import get_transcript_text, generate_g
 from ChatWithPDF.chat_with_pdf import user_input, get_pdf_text, get_text_chunks, get_vector_store
 from Vision.vision import get_gemini_response
 from MentalTherapist.mental_therapist import start_chat, get_bot_response
-
+import google.generativeai as genAI
 from PIL import Image
 
 # Set page title and configuration
@@ -12,6 +12,11 @@ st.set_page_config(page_title="Google Gemini App", layout="wide")
 
 # Sidebar navigation
 with st.sidebar:
+    st.header("Configuration")
+    
+    # Input field for the API key
+    api_key = st.text_input("Enter your Google API Key:", type="password")
+    
     # Use option_menu from streamlit_option_menu for selection
     project_selection = option_menu("Google Gemini Apps",
                           ['Youtube Summarizer',
@@ -19,7 +24,13 @@ with st.sidebar:
                            'Google Vision',
                            'Mental Therapist'],
                           icons=['youtube', 'file-text', 'eye', 'heart'],
-                          default_index=0)  
+                          default_index=0)
+
+# Check if the API key is entered
+if api_key:
+    genAI.configure(api_key=api_key)
+else:
+    st.error("Please enter your Google API Key in the sidebar to proceed.")
 
 # Main content area
 if project_selection == 'Youtube Summarizer':
@@ -34,7 +45,7 @@ if project_selection == 'Youtube Summarizer':
 
             transcript = get_transcript_text(youtube_url)
             if transcript:
-                summary = generate_gemini_content(transcript)
+                summary = generate_gemini_content(transcript, api_key)
                 st.markdown("## Detailed Notes:")
                 st.write(summary)
             else:
@@ -61,7 +72,7 @@ elif project_selection == 'Chat with PDF':
     user_question = st.text_input("Ask a Question from the PDF Files")
 
     if user_question:
-        response = user_input(user_question)
+        response = user_input(user_question,api_key)
         st.write("Reply: ", response["output_text"])
         
 elif project_selection == 'Google Vision':
@@ -78,13 +89,13 @@ elif project_selection == 'Google Vision':
         
         ## If ask button is clicked
         if submit:  
-            response=get_gemini_response(input,image)
+            response=get_gemini_response(input,image,api_key)
             st.subheader("The Response is")
             st.write(response)
 
 elif project_selection == 'Mental Therapist':
     if 'chat' not in st.session_state:
-        st.session_state.chat = start_chat()
+        st.session_state.chat = start_chat(api_key)
 
     # Streamlit application
     st.title("Mental Health Chatbot")

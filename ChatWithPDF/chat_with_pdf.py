@@ -1,16 +1,17 @@
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-import os
+# import os
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 import google.generativeai as genAI
 from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
-from dotenv import load_dotenv
+
+# from dotenv import load_dotenv
 
 # load all env file
-load_dotenv()
-genAI.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# load_dotenv()
+# genAI.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 # get pdf and extract all its text
@@ -42,7 +43,7 @@ def get_vector_store(text_chunk):
     vector_store.save_local("faiss_index")
 
 
-def get_conversational_chain():
+def get_conversational_chain(api_key):
 
     prompt_template = """
     Answer the question as detailed as possible from the provided context, make sure to provide all the details, if the answer is not in
@@ -52,19 +53,19 @@ def get_conversational_chain():
 
     Answer:
     """
-
+    genAI.configure(api_key=api_key)
     model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
     prompt = PromptTemplate(template=prompt_template, input_variables = ["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
 
     return chain
 
-def user_input(user_question):
+def user_input(user_question,api_key):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
 
     docs = new_db.similarity_search(user_question)
-    chain = get_conversational_chain()
+    chain = get_conversational_chain(api_key)
 
     response = chain(
         {"input_documents":docs, "question": user_question}

@@ -1,11 +1,11 @@
-from dotenv import load_dotenv
-import os
+# from dotenv import load_dotenv
+# import os
 import google.generativeai as genAI
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled
 
 # load all env file
-load_dotenv()
-genAI.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# load_dotenv()
+# genAI.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 # system prompt
@@ -30,8 +30,10 @@ def get_transcript_text(video_url):
     except Exception as e:
         raise e
 
-def generate_gemini_content(transcript_text):
+def generate_gemini_content(transcript_text,api_key):
     # load model
+    genAI.configure(api_key=api_key)
+
     model = genAI.GenerativeModel("gemini-pro")
 
     # generate content
