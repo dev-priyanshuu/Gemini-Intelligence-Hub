@@ -86,13 +86,13 @@ if api_key:
                     st.write("Please enter a valid YouTube URL")
 
         elif project_selection == 'Chat with PDF':
+            if "processed" not in st.session_state:
+                st.session_state.processed = False
             st.header("Chat with PDF using Gemini💁")
 
             # Upload PDF files
             st.header("Upload PDF")
             pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
-
-            processed = False
 
             if st.button("Submit & Process"):
                 if pdf_docs:
@@ -100,11 +100,11 @@ if api_key:
                         raw_text = get_pdf_text(pdf_docs)
                         text_chunks = get_text_chunks(raw_text)
                         get_vector_store(text_chunks)
-                        processed = True
+                        st.session_state.processed = True
                         st.success("Processing complete")
 
             # User input for questions
-            if processed:
+            if st.session_state.processed:
                 user_question = st.text_input("Ask a Question from the PDF Files")
                 if user_question:
                     response = user_input(user_question, api_key)
