@@ -7,6 +7,7 @@ st.title("Chat with PDF using Gemini💁")
 # Redesigned content outside the sidebar
 st.header("Upload PDF")
 api_key = st.text_input("Enter your Google API Key:", type="password")
+st.markdown("[How to Get an API key | Gemini API - Google AI for Developers?](https://ai.google.dev/gemini-api/docs/api-key)")
 pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
 
 if api_key:

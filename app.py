@@ -52,7 +52,7 @@ with st.sidebar:
     
     # Input field for the API key
     api_key = st.text_input("Enter your Google API Key:", type="password")
-    
+    st.markdown("[How to Get an API key | Gemini API - Google AI for Developers?](https://ai.google.dev/gemini-api/docs/api-key)")
     # Use option_menu from streamlit_option_menu for selection
     project_selection = option_menu("Google Gemini Apps",
                           ['Youtube Summarizer',

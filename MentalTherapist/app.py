@@ -6,6 +6,7 @@ from mental_therapist import start_chat, get_bot_response
 # Streamlit application
 st.title("Mental Health Chatbot")
 api_key = st.text_input("Enter your Google API Key:", type="password")
+st.markdown("[How to Get an API key | Gemini API - Google AI for Developers?](https://ai.google.dev/gemini-api/docs/api-key)")
 if api_key:
     # Initialize chat session if not already done
     if 'chat' not in st.session_state:

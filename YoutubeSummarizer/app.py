@@ -3,6 +3,7 @@ from youtube_summarizer import get_transcript_text, generate_gemini_content
 
 st.title("Youtube Summarizer")
 api_key = st.text_input("Enter your Google API Key:", type="password")
+st.markdown("[How to Get an API key | Gemini API - Google AI for Developers?](https://ai.google.dev/gemini-api/docs/api-key)")
 youtube_url = st.text_input("Enter YouTube Video Link:")
 if api_key:
     if youtube_url:

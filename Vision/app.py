@@ -5,6 +5,7 @@ from PIL import Image
 
 st.title("Gemini vision")
 api_key = st.text_input("Enter your Google API Key:", type="password")
+st.markdown("[How to Get an API key | Gemini API - Google AI for Developers?](https://ai.google.dev/gemini-api/docs/api-key)")
 input=st.text_input("Input Prompt: ",key="input")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 image=""   
