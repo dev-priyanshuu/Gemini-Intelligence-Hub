@@ -73,7 +73,7 @@ if api_key:
                 if youtube_url:
                     video_id = youtube_url.split("/")[-1].split("?")[0]
                     # Display YouTube thumbnail
-                    st.image(f"https://img.youtube.com/vi/{video_id}/0.jpg", use_column_width=True)
+                    st.image(f"https://img.youtube.com/vi/{video_id}/0.jpg", width=500)
 
                     transcript = get_transcript_text(youtube_url)
                     if transcript:
@@ -120,7 +120,7 @@ if api_key:
 
             if uploaded_file is not None:
                 image = Image.open(uploaded_file)
-                st.image(image,caption = "Uploaded Image", use_column_width=True)
+                st.image(image,caption = "Uploaded Image",  width=500)
                 
                 submit=st.button("Tell me about the image")
                 
