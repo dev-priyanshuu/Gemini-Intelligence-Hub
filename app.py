@@ -99,7 +99,7 @@ if api_key:
                     with st.spinner("Processing..."):
                         raw_text = get_pdf_text(pdf_docs)
                         text_chunks = get_text_chunks(raw_text)
-                        get_vector_store(text_chunks)
+                        get_vector_store(text_chunks,api_key)
                         st.session_state.processed = True
                         st.success("Processing complete")
 
